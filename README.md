@@ -1,4 +1,4 @@
-# Rate Me
+# Rate Me ⭐
  - Initial Version
 
 # Contributing
