@@ -1,5 +1,5 @@
 import { FC, MouseEvent, SVGProps } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 
 import { IIdTitle } from '../types';
@@ -14,17 +14,17 @@ export interface INavbarItemProps extends IIdTitle {
 
 const NavbarItem = ({ id, title, Icon, path, onClick, className }: INavbarItemProps): JSX.Element => {
   const classes = useStyles({});
-  const navigate = useNavigate();
 
-  const onNavbarItemClick = (path: string) => {
-    navigate(path);
-  };
-
-  return (
-    <div
-      className={classNames(classes.navbarItem, className)}
-      onClick={path ? () => onNavbarItemClick(path) : (e) => onClick && onClick(e, { id, title })}
+  return path ? (
+    <NavLink
+      className={({ isActive }) => classNames(classes.navbarItem, { [classes.active]: isActive }, className)}
+      to={path}
     >
+      {title && <span>{title}</span>}
+      {Icon && <Icon />}
+    </NavLink>
+  ) : (
+    <div className={classNames(classes.navbarItem, className)} onClick={(e) => onClick && onClick(e, { id, title })}>
       {title && <span>{title}</span>}
       {Icon && <Icon />}
     </div>

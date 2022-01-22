@@ -6,6 +6,8 @@ import { Paths } from 'utils/routes';
 
 import LogoIcon from 'assets/temp/logo.png';
 
+import useStyles from './style';
+
 const tempNavbarItems = [
   {
     id: 1,
@@ -17,17 +19,23 @@ const tempNavbarItems = [
     title: 'Sign Up',
     path: Paths.signUp,
   },
+  {
+    id: 3,
+    title: 'WithoutRoute',
+  },
 ];
 
 const Header = (): JSX.Element => {
   const navigate = useNavigate();
+  const classes = useStyles();
 
   return (
     <div>
       <Navbar
+        className={classes.nav}
         Logo={LogoIcon}
-        logoHeight={60}
-        logoWidth={160}
+        logoHeight={80}
+        logoWidth={200}
         onLogoClick={() => {
           navigate(Paths.empty);
         }}
