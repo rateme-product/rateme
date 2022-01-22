@@ -2,7 +2,7 @@ import { Route, Routes as Switch } from 'react-router-dom';
 
 import routes from 'utils/routes';
 
-const Main = () => {
+const Main = (): JSX.Element => {
   return (
     <Switch>
       {routes.map(({ id, path, Component }) => (
