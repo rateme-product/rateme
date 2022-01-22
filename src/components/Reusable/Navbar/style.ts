@@ -4,13 +4,13 @@ import Colors from 'styles/Colors';
 
 import { TStringNumber } from '../types';
 
-export interface IStyleProps {
+interface IStyleProps {
   logoHeight?: TStringNumber;
   logoWidth?: TStringNumber;
   logoPointer?: boolean;
 }
 
-const useStyles = createUseStyles(() => ({
+const useStyles = createUseStyles({
   navbar: {
     display: 'flex',
   },
@@ -65,6 +65,6 @@ const useStyles = createUseStyles(() => ({
       backgroundColor: `${Colors.BLACK} !important`,
     },
   },
-}));
+});
 
 export default useStyles;
