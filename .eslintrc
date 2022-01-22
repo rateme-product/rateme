@@ -61,7 +61,7 @@
         "groups": [
           ["^\\u0000"],
           ["^react$", "^react-.*|$", "^@?\\w"],
-          ["^(sections|components)(/.*|$)"],
+          ["^(sections|pages|components)(/.*|$)"],
           ["^(store|hooks|utils|services)(/.*|$)"],
           ["^(styles|public|assets)(/.*|$)", ".*\\.module\\.scss|$", ".*\\.svg|$"],
           ["^\\.", "^(types)(/.*|$)"],
