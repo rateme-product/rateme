@@ -5,8 +5,8 @@ import routes from 'utils/routes';
 const Main = () => {
   return (
     <Switch>
-      {routes.map(({ id, path, component }) => (
-        <Route key={id} path={path} element={component} />
+      {routes.map(({ id, path, component: Component }) => (
+        <Route key={id} path={path} element={<Component />} />
       ))}
     </Switch>
   );
