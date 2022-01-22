@@ -1,6 +1,7 @@
 import { FC, SVGProps } from 'react';
 import classNames from 'classnames';
 
+import { TStringNumber } from '../types';
 import NavbarItem, { INavbarItemProps } from './NavbarItem';
 import useStyles from './style';
 
@@ -10,17 +11,29 @@ interface INavbarProps {
   leftSideItems?: INavbarItem[];
   rightSideItems?: INavbarItem[];
   Logo?: FC<SVGProps<SVGSVGElement>> | string;
+  logoHeight?: TStringNumber;
+  logoWidth?: TStringNumber;
+  onLogoClick?: () => void;
   className?: string;
   navbarItemClassName?: string;
 }
 
-const Navbar = ({ leftSideItems, rightSideItems, Logo, className, navbarItemClassName }: INavbarProps): JSX.Element => {
-  const classes = useStyles({ logoHeight: 60, logoWidth: 100 });
+const Navbar = ({
+  leftSideItems,
+  rightSideItems,
+  Logo,
+  logoHeight = 'unset',
+  logoWidth = 'unset',
+  onLogoClick,
+  className,
+  navbarItemClassName,
+}: INavbarProps): JSX.Element => {
+  const classes = useStyles({ logoHeight, logoWidth, logoPointer: !!onLogoClick });
 
   return (
     <nav className={classNames(classes.navbar, className)}>
       {Logo && (
-        <div className={classes.logoContainer}>
+        <div className={classes.logoContainer} onClick={onLogoClick}>
           {typeof Logo === 'string' ? <img src={Logo} alt="Logo" /> : <Logo />}
         </div>
       )}

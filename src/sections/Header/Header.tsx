@@ -1,42 +1,38 @@
+import { useNavigate } from 'react-router-dom';
+
 import { Navbar } from 'components/Reusable';
+
+import { Paths } from 'utils/routes';
 
 import LogoIcon from 'assets/temp/logo.png';
 
 const tempNavbarItems = [
   {
     id: 1,
-    title: 'First',
-    onClick: () => {
-      console.log('First');
-    },
+    title: 'Sign In',
+    path: Paths.signIn,
   },
   {
     id: 2,
-    title: 'Second',
-    onClick: () => {
-      console.log('Second');
-    },
-  },
-  {
-    id: 3,
-    title: 'Third',
-    onClick: () => {
-      console.log('Thirds');
-    },
-  },
-  {
-    id: 4,
-    title: 'Fourth',
-    onClick: () => {
-      console.log('Fourth');
-    },
+    title: 'Sign Up',
+    path: Paths.signUp,
   },
 ];
 
 const Header = (): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
     <div>
-      <Navbar Logo={LogoIcon} leftSideItems={tempNavbarItems} />
+      <Navbar
+        Logo={LogoIcon}
+        logoHeight={60}
+        logoWidth={160}
+        onLogoClick={() => {
+          navigate(Paths.empty);
+        }}
+        rightSideItems={tempNavbarItems}
+      />
     </div>
   );
 };

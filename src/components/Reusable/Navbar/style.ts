@@ -4,16 +4,18 @@ import { TStringNumber } from '../types';
 
 export interface IStyleProps {
   logoHeight?: TStringNumber;
-  logoWidth?: number;
+  logoWidth?: TStringNumber;
+  logoPointer?: boolean;
 }
 
 const useStyles = createUseStyles(() => ({
   navbar: {
     display: 'flex',
   },
-  logoContainer: ({ logoWidth, logoHeight }: IStyleProps) => ({
-    height: logoHeight || 20,
-    width: logoWidth || 20,
+  logoContainer: ({ logoWidth, logoHeight, logoPointer }: IStyleProps) => ({
+    height: logoHeight,
+    width: logoWidth,
+    cursor: logoPointer ? 'pointer' : 'default',
     '& > img': {
       objectFit: 'cover',
       height: '100%',
@@ -28,7 +30,12 @@ const useStyles = createUseStyles(() => ({
     marginLeft: 'auto',
   },
   navbarItem: {
+    display: 'flex',
+    alignItems: 'center',
     cursor: 'pointer',
+    fontFamily: 'sans-serif',
+    fontWeight: 'bold',
+    padding: 10,
   },
 }));
 
