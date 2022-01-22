@@ -10,7 +10,7 @@ export interface IRoutes {
   id: number;
   title: string;
   path: Paths;
-  component: LazyExoticComponent<ComponentType> | ComponentType;
+  Component: LazyExoticComponent<ComponentType> | ComponentType;
 }
 
 export enum Paths {
@@ -24,19 +24,19 @@ const routes: IRoutes[] = [
     id: 1,
     path: Paths.empty,
     title: 'Welcome',
-    component: Landing,
+    Component: Landing,
   },
   {
     id: 2,
     path: Paths.signIn,
     title: 'Sign In',
-    component: SignIn,
+    Component: SignIn,
   },
   {
     id: 3,
     path: Paths.signUp,
     title: 'Welcome',
-    component: SignUp,
+    Component: SignUp,
   },
 ];
 
