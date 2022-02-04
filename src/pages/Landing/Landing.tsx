@@ -1,6 +1,6 @@
 import { tempTableData, tempTableHeaders } from 'constants/temp';
 
-import { Select, Table } from 'components/Reusable';
+import { Button, Input, Select, Table } from 'components/Reusable';
 
 import useStyles from './style';
 
@@ -9,8 +9,16 @@ const Landing = () => {
 
   return (
     <div className={classes.landing}>
-      <Table columns={tempTableHeaders} dataSource={tempTableData} pagination={{ pageSize: 20 }} />
-      <Select options={tempTableData.map((item) => ({ value: item.id, label: item.city }))} />
+      <div>
+        <span>Components</span>
+        <Table columns={tempTableHeaders} dataSource={tempTableData} pagination={{ pageSize: 20 }} rowKey={'id'} />
+        <Select
+          options={tempTableData.map((item) => ({ value: item.id, label: item.city }))}
+          style={{ minWidth: 100 }}
+        />
+        <Input />
+        <Button>Button</Button>
+      </div>
     </div>
   );
 };
