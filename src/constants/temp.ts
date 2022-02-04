@@ -1,12 +1,12 @@
 export const tempTableHeaders = [
-  { id: 1, title: 'FirstName', dataKey: 'firstName' },
-  { id: 2, title: 'LastName', dataKey: 'lastName' },
-  { id: 3, title: 'Age', dataKey: 'age' },
-  { id: 4, title: 'Company', dataKey: 'company' },
-  { id: 5, title: 'State', dataKey: 'state' },
-  { id: 6, title: 'City', dataKey: 'city' },
-  { id: 7, title: 'Phone', dataKey: 'phone' },
-  { id: 8, title: 'Rating', dataKey: 'rating' },
+  { id: 1, title: 'FirstName', dataIndex: 'firstName' },
+  { id: 2, title: 'LastName', dataIndex: 'lastName' },
+  { id: 3, title: 'Age', dataIndex: 'age' },
+  { id: 4, title: 'Company', dataIndex: 'company' },
+  { id: 5, title: 'State', dataIndex: 'state' },
+  { id: 6, title: 'City', dataIndex: 'city' },
+  { id: 7, title: 'Phone', dataIndex: 'phone' },
+  { id: 8, title: 'Rating', dataIndex: 'rating' },
 ];
 
 export const tempTableData = [

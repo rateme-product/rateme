@@ -1,3 +1,5 @@
+import 'antd/dist/antd.css';
+
 import { render } from 'react-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider } from 'react-redux';
